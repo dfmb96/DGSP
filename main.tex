@@ -387,4 +387,92 @@ $$P_{t_1, \ldots, t_{n+1}}\{\times_{k=1}^n A_k \times R^d\} = P_{t_1, \ldots, t_
 \begin{proof}[Идея доказательства]
 
 \end{proof}
+
+\section{Измеримость марковских моментов и другие из свойства (3.6.10 - 3.6.15)}
+\begin{theorem}
+Любой марковский момент $\tau$ измерим относительно $\sigma$-алгебры $\mathcal{F}_{\tau-}$.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть дан марковский момент $\tau$ и $\mathcal{F}_\tau$-измеримая функция $\sigma: \Omega \rightarrow T \cup \{\infty\}$. Тогда:
+\begin{enumerate}
+    \item Если $\tau \le \sigma$, то $\sigma$ - марковский момент.
+    \item $\forall A \in \mathcal{F}_\tau$ функция $\tau_A = \tau\mathbf{1}_A + \infty\mathbf{1}_{A^c}$ является марковским моментом.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Для любого марковского момента $\tau$ относительно фильтрации $\mathrm{F}_T$ с выпуклым множеством $T$ существуют такие марковские моменты $\tau_n$, что каждый из них принимает конечное число значений и $\tau_n \downarrow \tau$.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть дана последовательность марковских моментов $\{\tau_n\}$. Если она убывает и $\forall \omega \in \Omega$ найдётся номер $m$, начиная с которого все $\tau_n(\omega) = \tau_m(\omega)$, то функция $\tau = \lim_{n \rightarrow \infty}\tau_n$ является марковским моментом.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть даны марковские моменты $\tau_n$. Если $\forall t_n \in T \sup_{n \rightarrow \infty}t_n \in T \cup \{\infty\}$, то $\tau = \sup_{n \rightarrow \infty}\tau_n$ - марковский момент и $\cup_{n = 1}^\infty \mathcal{F}_{\tau_n} \subseteq \mathcal{F}_\tau$.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть даны марковские моменты $\tau_n$ относительно фильтрации $\mathrm{F}_T$. Если фильтрация непрерывна справа, а $T = {1, 2, \ldots}$ или $T = [a, b]$, или $T = [a, \infty)$, то функции $$\lim\sup \tau_n, \lim\inf \tau_n, \sup \tau_n, \inf \tau_n, n \rightarrow \infty$$ являются марковскими моментами и $\mathcal{F}_{\inf \tau_n} = \cap_{n = 1}^\infty \mathcal{F}_{\tau_n}$.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+
+\section{Предсказуемые марковские моменты (3.7.1 - 3.7.7)}
+Теперь у нас $T = [0, \infty)$ и фильтрация $\mathrm{F} = \{\mathcal{F}_t \mid \mathcal{F}_t \subseteq \mathcal{F}, t \ge 0\}$. Соответственно, все марковские моменты берутся относительно этой фильтрации, теперь это функции вида $\tau: \Omega \rightarrow \overline{R}_+$.
+\begin{definition}
+Марковский момент называется \textit{предсказуемым}, если $\exists \tau_n\uparrow, \tau_n < \tau$ на множестве $\{\tau > 0\}$ такая, что $\lim_{n \rightarrow \infty} \tau_n = \tau$. Сама последовательность называется \textit{предвещающей}.
+\end{definition}
+Дальше идут три примера:
+\begin{enumerate}
+    \item $\forall \alpha \ge 0, A \in \mathcal{F}_\alpha: \tau = \alpha\mathbf{1}_A + \infty\mathbf{1}_{A^c}$ - предсказуемый марковский момент. Марковский момент - потому что теорема в предыдущем билете, предсказуемый - потому что если $\alpha > 0$, то есть $\alpha_n \uparrow$ такая, что $\alpha_n \rightarrow \alpha$, ну и предвещающей последовательностью берём $\{\tau_n \wedge n\}$, где $\tau_n = \alpha_n\mathbf{1}_A + \infty\mathbf{1}_{A^c}$. А если $\alpha = 0$, то возьмём $\{\tau_A \wedge n\}$.
+    \item Сумма $\tau + \sigma$, где $\tau$ - марковский момент, а $\sigma$ - предсказуемый марковский момент, является предсказуемым марковским моментом. В качестве предвещающей последовательности берём $\{\tau + \sigma_n\}$, где $\sigma_n$ - предвещающая последовательность для $\sigma$. Каждая из таких сумм - марковский момент, потому что была такая задача в предыдущем параграфе, причём без решения, так что, видимо, просто потому что.
+    \item $X$ - случайный процесс: $\mathrm{F}$-согласованный, непрерывный, вещественный (нашедший своё место в жизни, самореализовавшийся, семья, дети, все дела. Кто-нибудь помнит, что эти слова вообще значат?). Тогда $\forall c \in R: \tau = \inf\{t \ge 0 \mid X_t \ge c\}$ - предсказуемый марковский момент. Потому что, бл*ть, гладиолус, дальше на страницу чё-то расписано, но сводится к тому, что предвещающая последовательность - $\{\tau_n \wedge n\}$, где $\tau_n = \inf\{t \ge 0 \mid X_t \ge c - \frac{1}{n}\}$. 
+\end{enumerate}
+Настало время теорем. Особенно неожиданным результатом кажется первое утверждение следующей теоремы.
+\begin{theorem}
+Предсказуемый марковский момент является марковским моментом; $\mathcal{F}_{\tau-} = \sigma(\cup_{n = 1}^\infty \mathcal{F}_{\tau_n})$ для любой предвещающей последовательности $\tau_n$.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть $\tau, \sigma$ - предсказуемые марковские моменты. Тогда:
+\begin{enumerate}
+    \item $\tau \wedge \sigma, \tau \vee \sigma$ - предсказуемые марковские моменты.
+    \item $\{\tau \le \sigma\}, \{\tau < \sigma\}, \{\tau \ge \sigma\}, \{\tau > \sigma\}, \{\tau = \sigma\} \in \mathcal{F}_{\tau-}\cap\mathcal{F}_{\sigma-}$.
+    \item $A \cap \{\tau \le \sigma\}, A \cap \{\tau < \sigma\}, A \cap \{\tau = \sigma\} \in \mathcal{F}_{\tau-}\cap\mathcal{F}_{\sigma-}$ для любого $A \in \mathcal{F}_{\tau-}$
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть даны предсказуемые марковские моменты $\tau_n$.
+\begin{enumerate}
+    \item Если $\tau_n \uparrow$, то $\tau = \lim_{n \rightarrow \infty}\tau_n$ - предсказуемый марковский момент.
+    \item Если $\tau_n \downarrow$ и для любого $\omega \in \Omega$ найдётся номер $m$, начиная с которого $\tau_n(\omega) = \tau_m(\omega)$, то $\tau = \lim_{n \rightarrow \infty}\tau_n$ - предсказуемый марковский момент.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
+\begin{theorem}
+Пусть $\tau$ - предсказуемый марковский момент. Тогда $\forall A \in \mathcal{F}_{\tau-}$ функция $\tau_A = \tau\mathbf{1}_A + \infty\mathbf{1}_{A^c}$ - предсказуемый марковский момент.
+\end{theorem}
+\begin{proof}[Идея доказательства]
+
+\end{proof}
 \end{document}
